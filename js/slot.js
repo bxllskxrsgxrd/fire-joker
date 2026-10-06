@@ -97,7 +97,7 @@ class Reel {
 
 		this.offset += symbolCount * symbolHeight;
 
-		const durations = isPhone ? [1900, 2400, 3100] : [3200, 3700, 4400, 5300, 6500];
+		const durations = isPhone ? [1200, 1900, 2400] : [3200, 3700, 4400, 5300, 6500];
 
 		this.animation = this.symbolContainer.animate(
 			[
