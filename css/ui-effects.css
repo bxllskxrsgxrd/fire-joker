@@ -1,0 +1,123 @@
+@keyframes loader-progress {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes win-symbol {
+	0% {
+		transform: scaleY(-1) scale(0.8) rotateY(0);
+	}
+	50% {
+		transform: scaleY(-1) scale(0.9) rotateY(180deg);
+	}
+	100% {
+		transform: scaleY(-1) scale(0.8) rotateY(360deg);
+	}
+}
+
+.loader {
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 44px;
+	overflow: hidden;
+	isolation: isolate;
+	background:
+		radial-gradient(
+			ellipse at 50% 80%,
+			rgba(194, 68, 13, 0.12),
+			transparent 55%
+		),
+		linear-gradient(
+			180deg,
+			#041522 0%,
+			#07141c 55%,
+			#1c100c 100%
+		);
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.loader::before {
+	content: "";
+	position: absolute;
+	inset: 0 auto 0 50%;
+	width: min(100vw, 46.2085svh);
+	z-index: 0;
+	transform: translateX(-50%);
+	background: url("./../assets/images/background_wind.png") center top / cover no-repeat;
+}
+
+.loader.is--hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.loader__logo {
+	position: relative;
+	z-index: 1;
+	width: min(72vw, 430px);
+
+	filter:
+		drop-shadow(0 6px 8px rgba(0, 0, 0, 1))
+		drop-shadow(0 18px 20px rgba(0, 0, 0, 0.95))
+		drop-shadow(0 34px 38px rgba(0, 0, 0, 0.8))
+		drop-shadow(0 50px 55px rgba(0, 0, 0, 0.55));
+}
+
+.loader__progress {
+	position: relative;
+	z-index: 1;
+	width: min(76vw, 338px);
+	height: 26px;
+	padding: 3px;
+	overflow: hidden;
+	border: 3px solid #a61108;
+	border-radius: 999px;
+	background: #f4f4f4;
+}
+
+.loader__progress-value {
+	width: 0;
+	height: 100%;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #ff160b 0%, #ff4b00 50%, #ffb800 100%);
+	animation: loader-progress 2.5s linear forwards;
+}
+
+.is--winner .aaiwoc .icons img:nth-child(2):not(.icon-win) {
+	animation: none;
+}
+
+.is--winner .aaiwoc .icons img.icon-win:nth-last-child(2) {
+	animation: win-symbol 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 600px) {
+	.loader::before {
+		width: 100vw;
+	}
+
+	.loader {
+		gap: 30px;
+	}
+
+	.loader__logo {
+		width: min(84vw, 430px);
+	}
+
+	.loader__progress {
+		width: min(78vw, 338px);
+		height: 22px;
+	}
+}

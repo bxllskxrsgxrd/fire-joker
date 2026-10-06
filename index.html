@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=0.9, maximum-scale=0.9, minimum-scale=0.9, viewport-fit=cover"
+		/>
+		<meta name="theme-color" content="#ffffff" />
+		<meta name="google" content="notranslate" />
+		<meta name="description" content="Kickstart your adventure with a massive 10000 SEK Bonus + 400 Free Spins!" />
+		<title>New Fire Joker</title>
+		<link rel="icon" type="image/webp" sizes="32x32" href="./assets/images/favicon-32x32.webp" />
+		<link rel="icon" type="image/webp" sizes="16x16" href="./assets/images/favicon-16x16.webp" />
+		<link rel="preload" href="./assets/sounds/spin.mp3" as="audio" type="audio/mpeg" />
+		<link rel="preload" href="./assets/sounds/win.mp3" as="audio" type="audio/mpeg" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/ui-effects.css" />
+	</head>
+	<body>
+		<div class="loader" id="loader" role="status" aria-label="Loading">
+			<img class="loader__logo" src="./assets/images/logo.webp" alt="New Fire Joker" />
+			<div class="loader__progress" aria-hidden="true">
+				<div class="loader__progress-value"></div>
+			</div>
+		</div>
+
+		<div class="aaiwnk">
+			<div class="aaiwnl">
+				<div class="aaiwny">
+					<img src="./assets/images/char.webp" class="aaiwnz" alt="" />
+				</div>
+
+				<img src="./assets/images/logo.webp" class="aaiwoa is--desktop" alt="New Fire Joker" />
+				<div id="slot" data-spin="1" class="inverted">
+					<div class="aaiwob"></div>
+					<div id="reels">
+						<div class="aaiwoc" data-js="reel">
+							<div class="icons">
+								<img src="./assets/symbols/1.webp" class="icon-1" alt="" />
+								<img src="./assets/symbols/6.webp" class="icon-6" alt="" />
+								<img src="./assets/symbols/2.webp" class="icon-2" alt="" />
+							</div>
+						</div>
+						<div class="aaiwoc" data-js="reel">
+							<div class="icons">
+								<img src="./assets/symbols/3.webp" class="icon-3" alt="" />
+								<img src="./assets/symbols/1.webp" class="icon-1" alt="" />
+								<img src="./assets/symbols/2.webp" class="icon-2" alt="" />
+							</div>
+						</div>
+						<div class="aaiwoc" data-js="reel">
+							<div class="icons">
+								<img src="./assets/symbols/win.webp" class="icon-win" alt="" />
+								<img src="./assets/symbols/4.webp" class="icon-4" alt="" />
+								<img src="./assets/symbols/win.webp" class="icon-win" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bottom__section">
+					<button class="bottom__section-button pulse" id="go-btn" style="transform: scale(1)">
+						<span id="go-btn-default-text">PLAY</span>
+					</button>
+				</div>
+
+				<div class="modal" id="modal">
+					<div class="modal__container">
+						<img src="./assets/images/logo.webp" class="aaiwoa is--desktop" alt="New Fire Joker" />
+
+						<div class="winner-stack">
+							<img class="modal__logo" src="./assets/images/big_win_logo.webp" alt="Big Win" />
+
+							<div class="panel panel--bonus">
+								<img src="./assets/images/bonus_panel.webp" alt="" />
+
+								<div class="panel__content panel__content--bonus">
+									<div class="panel__headline">Congratulations!</div>
+									<img src="./assets/images/bonus-divider.webp" alt="" />
+									<div class="panel__copy">
+										<span class="panel__lead">You've won a $1,500 Bonus + 200 Free Spins!</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="bottom__section bottom__section--modal">
+								<button id="win-button-modal" class="bottom__section-button pulse">
+									<span class="bottom__section-button-text">CLAIM</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="aaiwof hidden" id="effects"></div>
+		</div>
+
+		<script src="./js/slot.js"></script>
+		<script>
+			document.getElementById('win-button-modal')?.addEventListener('click', () => {
+				window.location.href = '{{link}}';
+			});
+		</script>
+	</body>
+</html>
